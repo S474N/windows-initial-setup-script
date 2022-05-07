@@ -1,7 +1,12 @@
+# Windows-Initial-Setup-Script - Awesome muso
 
-# Awesome muso
+Následuje seznam užiteèných skriptù, které èiní Windows po jejich èerstvé instalaci použitelnìjšími. Odstraòuje všechny
+nesmysly, zbyteènosti, reklamy, trackery a spoustu dalšího (kdo znáte skript od DASM, tak toto je svým zpùsobem jeho
+pokraèování).
 
-Curated list of tools I'm using, installed step by step right after installation of Windows 11 OS from Windows Terminal (run as Administrator).
+V dalším kroku s pomocí Chocolatey nainstaluje nejpoužívanìjší programy a utility. 
+
+Vše spouštìt z Pøíkazové øádky Windows, která je spuštìná pøes pravé tlaèítko a "Spustit jako správce".
 
 ```powershell
 # Unrestrict execution of scripts in PowerShell
@@ -22,17 +27,15 @@ choco feature enable -n allowGlobalConfirmation
 choco feature enable -n allowEmptyChecksums
 
 # Install software
-choco install vlc 7zip googlechrome vscode nodejs stremio steam battle.net qbittorrent firacode git copyq
+choco install vlc 7zip googlechrome firefox opera keepassxc notepadplusplus totalcommander telegram viber discord winscp openvpn
 
 # Add git and node to path
 refreshenv
-
-# Setup Git
-git config --global user.name ""
-git config --global user.email ""
 
 # (Optional) Edit and backup PowerShell command history
 code (Get-PSReadlineOption).HistorySavePath
 ```
 
-To install Windows Subsystem for Linux follow https://github.com/musosoft/awesome-muso/blob/master/install-WSL.md
+Pro instalaci Windows Subsystem for Linux  https://github.com/musosoft/awesome-muso/blob/master/install-WSL.md
+
+Pøevzato a upraveno pro vlastní potøeby od Muso https://github.com/musosoft/awesome-muso
