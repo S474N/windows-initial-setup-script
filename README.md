@@ -21,7 +21,7 @@ choco feature enable -n allowGlobalConfirmation
 choco feature enable -n allowEmptyChecksums
 
 # Install software
-choco install vlc 7zip googlechrome firefox opera keepassxc notepadplusplus totalcommander telegram viber discord winscp openvpn
+choco install vlc 7zip googlechrome firefox opera keepassxc notepadplusplus totalcommander telegram viber discord winscp openvpn xnview
 
 # Add git and node to path
 refreshenv
