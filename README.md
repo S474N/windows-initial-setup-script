@@ -6,20 +6,15 @@ pokraèování).
 
 V dalším kroku s pomocí Chocolatey nainstaluje nejpoužívanìjší programy a utility. 
 
-Vše spouštìt z Pøíkazové øádky Windows, která je spuštìná pøes pravé tlaèítko a "Spustit jako správce".
+Vše spouštìt z Powershell Windows, který je spuštìný pøes pravé tlaèítko a "Spustit jako správce".
 
 ```powershell
 # Unrestrict execution of scripts in PowerShell
 Set-ExecutionPolicy unrestricted
 
-# ChrisTitusTech tool 
-iwr -useb https://git.io/JJ8R4 | iex
 
-# Sophia script
+# Sophia script - po stažení spustit SophiApp.exe
 irm script.sophi.app | iex
-
-# Optimizer tool
-Invoke-Webrequest (Invoke-RestMethod -uri https://api.github.com/repos/hellzerg/optimizer/releases/latest | select -ExpandProperty assets | select -expand browser_download_url) -OutFile Optimizer.exe; & .\Optimizer.exe
 
 # Chocolatey package manager
 [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
@@ -32,8 +27,14 @@ choco install vlc 7zip googlechrome firefox opera keepassxc notepadplusplus tota
 # Add git and node to path
 refreshenv
 
+# UŽ NEPOUŽÍVÁM! ChrisTitusTech tool
+#irm christitus.com/win | iex
+
+# UŽ NEPOUŽÍVÁM! Optimizer tool
+Invoke-Webrequest (Invoke-RestMethod -uri https://api.github.com/repos/hellzerg/optimizer/releases/latest | select -ExpandProperty assets | select -expand browser_download_url) -OutFile Optimizer.exe; & .\Optimizer.exe
+
 # (Optional) Edit and backup PowerShell command history
-code (Get-PSReadlineOption).HistorySavePath
+#code (Get-PSReadlineOption).HistorySavePath
 ```
 
 Pro instalaci Windows Subsystem for Linux  https://github.com/musosoft/awesome-muso/blob/master/install-WSL.md
