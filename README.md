@@ -31,7 +31,7 @@ refreshenv
 #irm christitus.com/win | iex
 
 # UŽ NEPOUŽÍVÁM! Optimizer tool
-Invoke-Webrequest (Invoke-RestMethod -uri https://api.github.com/repos/hellzerg/optimizer/releases/latest | select -ExpandProperty assets | select -expand browser_download_url) -OutFile Optimizer.exe; & .\Optimizer.exe
+#Invoke-Webrequest (Invoke-RestMethod -uri https://api.github.com/repos/hellzerg/optimizer/releases/latest | select -ExpandProperty assets | select -expand browser_download_url) -OutFile Optimizer.exe; & .\Optimizer.exe
 
 # (Optional) Edit and backup PowerShell command history
 #code (Get-PSReadlineOption).HistorySavePath
