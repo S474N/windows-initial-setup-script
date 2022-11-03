@@ -12,7 +12,6 @@ Vše spouštìt z Powershell Windows, který je spuštìný pøes pravé tlaèítko a "Spus
 # Unrestrict execution of scripts in PowerShell
 Set-ExecutionPolicy unrestricted
 
-
 # Sophia script - po stažení spustit SophiApp.exe
 irm script.sophi.app | iex
 
