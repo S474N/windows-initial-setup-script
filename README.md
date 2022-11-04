@@ -15,12 +15,10 @@ Set-ExecutionPolicy unrestricted
 # Sophia script - po stažení spustit
 irm script.sophi.app -useb | iex
 
-# Sophia script - spuštìní skriptu
+# Sophia script - spuštìní skriptu 
 .\Sophia.ps1
-
 .\Sophia.ps1 -Functions "OneDrive -Uninstall"
  
-
 # Chocolatey package manager
 [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 choco feature enable -n allowGlobalConfirmation
