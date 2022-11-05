@@ -12,19 +12,26 @@ Vše spouštìt z Powershell Windows, který je spuštìný pøes pravé tlaèítko a "Spus
 # Unrestrict execution of scripts in PowerShell
 Set-ExecutionPolicy unrestricted
 
-# Sophia script - po stažení spustit
+# Stáhnutí Sophia script
 irm script.sophi.app -useb | iex
 
 # Sophia script - spuštìní skriptu 
 .\Sophia.ps1
+
+# Windows 10 - odinstalace zbyteèností, které výchozí nastavení skriptu nepobere (OneDrive,.Disney+, Spotify)
 .\Sophia.ps1 -Functions "OneDrive -Uninstall"
- 
-# Chocolatey package manager
+Get-AppxPackage -Name *SpotifyAB.SpotifyMusic* -AllUsers | Remove-AppxPackage -AllUsers
+Get-AppxPackage -Name *Disney.37853FC22B2CE* -AllUsers | Remove-AppxPackage -AllUsers
+
+# Aktualizace modulù PowerShellGet, PowerShellManagement, PSReadlIne
+iwr https://raw.githubusercontent.com/farag2/Windows_Terminal/main/Install_Modules.ps1 -UseBasicParsing | iex 
+
+# Instalace Chocolatey package manager
 [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 choco feature enable -n allowGlobalConfirmation
 choco feature enable -n allowEmptyChecksums
 
-# Install software
+# Instalace software pøes Chocolatey
 choco install vlc 7zip googlechrome firefox opera keepassxc notepadplusplus winscp openvpn xnview
 choco install telegram viber discord 
 choco install totalcommander
