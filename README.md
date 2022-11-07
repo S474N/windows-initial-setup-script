@@ -28,7 +28,6 @@ Get-AppxPackage -Name *Disney.37853FC22B2CE* -AllUsers | Remove-AppxPackage -All
 Get-AppxPackage -Name *SpotifyAB.SpotifyMusic* -AllUsers | Remove-AppxPackage -AllUsers
 Get-AppxPackage -Name *Disney.37853FC22B2CE* -AllUsers | Remove-AppxPackage -AllUsers
  .\Sophia.ps1 -Functions "TaskbarAlignment -Left"
- .\Sophia.ps1 -Functions "RecycleBinDeleteConfirmation -Disable"
 
 # Aktualizace modulù PowerShellGet, PowerShellManagement, PSReadLine
 iwr https://raw.githubusercontent.com/farag2/Windows_Terminal/main/Install_Modules.ps1 -UseBasicParsing | iex 
