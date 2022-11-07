@@ -23,7 +23,14 @@ irm script.sophi.app -useb | iex
 Get-AppxPackage -Name *SpotifyAB.SpotifyMusic* -AllUsers | Remove-AppxPackage -AllUsers
 Get-AppxPackage -Name *Disney.37853FC22B2CE* -AllUsers | Remove-AppxPackage -AllUsers
 
-# Aktualizace modulù PowerShellGet, PowerShellManagement, PSReadlIne
+# Windows 11 - odinstalace zbyteèností, které výchozí nastavení skriptu nepobere (OneDrive,.Disney+, Spotify), Start menu doleva
+.\Sophia.ps1 -Functions "OneDrive -Uninstall"
+Get-AppxPackage -Name *SpotifyAB.SpotifyMusic* -AllUsers | Remove-AppxPackage -AllUsers
+Get-AppxPackage -Name *Disney.37853FC22B2CE* -AllUsers | Remove-AppxPackage -AllUsers
+ .\Sophia.ps1 -Functions "TaskbarAlignment -Left"
+ .\Sophia.ps1 -Functions "RecycleBinDeleteConfirmation -Disable"
+
+# Aktualizace modulù PowerShellGet, PowerShellManagement, PSReadLine
 iwr https://raw.githubusercontent.com/farag2/Windows_Terminal/main/Install_Modules.ps1 -UseBasicParsing | iex 
 
 # Instalace Chocolatey package manager
